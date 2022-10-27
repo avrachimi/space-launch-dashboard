@@ -37,10 +37,10 @@
             <span><%= counter %> </span>
         </div>
     </div>
-    <div id="launches">
+    <div class="tables">
         <h2>Upcoming Launches</h2>
-        <table id="space-launch-table">
-            <tr id="space-launch-table-header">
+        <table>
+            <tr>
                 <th>Name</th>
                 <th>Status</th>
                 <th>Launch Date & Time*</th>
@@ -57,11 +57,9 @@
                 </tr>
             <% } %>
         </table>
-    </div>
-    <div id="starship">
         <h2>Latest Starship Updates</h2>
-        <table id="starship-updates-table">
-            <tr id="starship-updates-table-header">
+        <table>
+            <tr>
                 <th>Received On*</th>
                 <th>Comments</th>
                 <th>More Info</th>
@@ -74,8 +72,8 @@
                 </tr>
             <% } %>
         </table>
-    </div>
-    <p><strong>* All times are in UTC</strong></p>
+        <p><strong>* All times are in UTC</strong></p>
+
     <script src="/js/index.js"></script>
 </body>
 

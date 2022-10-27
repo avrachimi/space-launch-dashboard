@@ -22,21 +22,24 @@
         </nav>
         <a class="callToAction" target="_blank" href="https://github.com/avrachimi/space-launch-dashboard"><button>Github</button></a>
     </header>
-    <table id="starship-updates-table">
-        <tr id="starship-updates-table-header">
-            <th>Received On*</th>
-            <th>Comments</th>
-            <th>More Info</th>
-        </tr>
-        <% for (var i=0; i < locals.data.length; i++) { %>
-            <tr>
-                <td><%= new Date(locals.data[i].created_on).toUTCString().slice(0, 26) %></td>
-                <td><%= locals.data[i].comment %></td>
-                <td><a target="_blank" href=<%= locals.data[i].info_url %>>more info</a></td>
+    <div class="tables">
+        <h2>Starship Updates</h2>
+        <table id="starship-updates-table">
+            <tr id="starship-updates-table-header">
+                <th>Received On*</th>
+                <th>Comments</th>
+                <th>More Info</th>
             </tr>
-        <% } %>
-    </table>
-    <p><strong>* All times are in UTC</strong></p>
+            <% for (var i=0; i < locals.data.length; i++) { %>
+                <tr>
+                    <td><%= new Date(locals.data[i].created_on).toUTCString().slice(0, 26) %></td>
+                    <td><%= locals.data[i].comment %></td>
+                    <td><a target="_blank" href=<%= locals.data[i].info_url %>>more info</a></td>
+                </tr>
+            <% } %>
+        </table>
+        <p><strong>* All times are in UTC</strong></p>
+    </div>
     <script src="/js/starship.js"></script>
 </body>
 

@@ -22,9 +22,10 @@
         </nav>
         <a class="callToAction" target="_blank" href="https://github.com/avrachimi/space-launch-dashboard"><button>Github</button></a>
     </header>
-    <div id="tables">
-        <table id="iss-crew-table">
-            <tr id="iss-crew-table-header">
+    <div class="tables">
+        <h2>Astronauts Currently Living on the International Space Station</h2>
+        <table>
+            <tr>
                 <th>Name</th>
                 <th>Role</th>
                 <th>Agency</th>
@@ -40,8 +41,9 @@
             <% } %>
         </table>
         <br/>
-        <table id="iss-docked-vehicles-table">
-            <tr id="iss-docked-vehicles-table-header">
+        <h2>Docked Vehicles</h2>
+        <table>
+            <tr>
                 <th>Name</th>
                 <th>Docked At*</th>
             </tr>
@@ -54,8 +56,8 @@
                 <% } %>
             <% } %>
         </table>
+        <p><strong>* All times are in UTC</strong></p>
     </div>
-    <p><strong>* All times are in UTC</strong></p>
     <script src="/js/iss.js"></script>
 </body>
 

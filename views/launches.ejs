@@ -22,25 +22,28 @@
         </nav>
         <a class="callToAction" target="_blank" href="https://github.com/avrachimi/space-launch-dashboard"><button>Github</button></a>
     </header>
-    <table id="space-launch-table">
-        <tr id="space-launch-table-header">
-            <th>Name</th>
-            <th>Status</th>
-            <th>Launch Date & Time*</th>
-            <th>Launch Provider</th>
-            <th>Launch Type</th>
-        </tr>
-        <% for (var i=0; i < locals.data.length; i++) { %>
+    <div class="tables">
+        <h2>Upcoming Launches</h2>
+        <table>
             <tr>
-                <td><%= locals.data[i].name %></td>
-                <td><%= locals.data[i].status_short %></td>
-                <td><%= new Date(locals.data[i].datetime).toUTCString().slice(0, 26) %></td>
-                <td><%= locals.data[i].provider_name %></td>
-                <td><%= locals.data[i].provider_type ? locals.data[i].provider_type : 'N/A' %></td>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Launch Date & Time*</th>
+                <th>Launch Provider</th>
+                <th>Launch Type</th>
             </tr>
-        <% } %>
-    </table>
-    <p><strong>* All times are in UTC</strong></p>
+            <% for (var i=0; i < locals.data.length; i++) { %>
+                <tr>
+                    <td><%= locals.data[i].name %></td>
+                    <td><%= locals.data[i].status_short %></td>
+                    <td><%= new Date(locals.data[i].datetime).toUTCString().slice(0, 26) %></td>
+                    <td><%= locals.data[i].provider_name %></td>
+                    <td><%= locals.data[i].provider_type ? locals.data[i].provider_type : 'N/A' %></td>
+                </tr>
+            <% } %>
+        </table>
+        <p><strong>* All times are in UTC</strong></p>
+    </div>
     <script src="/js/launches.js"></script>
 </body>
 

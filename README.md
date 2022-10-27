@@ -11,6 +11,22 @@ Using the [Launch Library API](https://ll.thespacedevs.com).
 - /iss
 - /starship
 
-### TODO
-- ~~Show Modal with more details when user clicks on a specific item~~ (maybe later)
-- Home Page should be a dashboard showing all kinds of data regarding the ISS, launches, Starship development updates and other events
+### How to Install and Run
+**You should already have Node and MySQL server installed and running.**
+
+1. Clone this repository
+```sh
+git clone https://github.com/avrachimi/space-launch-dashboard.git
+```
+
+2. Create .env file in root directory of project
+
+3. Install all dependencies
+```sh
+npm install
+```
+
+4. Run!
+```sh
+npm start
+```
