@@ -3,15 +3,25 @@
 
 <head>
     <title>Space Launch Dashboard</title>
+    <link rel="stylesheet" href="/css/launches.css">
     <link rel="stylesheet" href="/css/styles.css">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="#">
 </head>
 
 <body>
-    <div id="header">
-        <h1>Upcoming Space Launches</h1>
-    </div>
+    <header>
+        <h3>Space Launch Dashboard</h3>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/launches" class="current">Launches</a></li>
+                <li><a href="/iss">ISS</a></li>
+                <li><a href="/starship">Starship</a></li>
+            </ul>
+        </nav>
+        <a class="callToAction" target="_blank" href="https://github.com/avrachimi/space-launch-dashboard"><button>Github</button></a>
+    </header>
     <table id="space-launch-table">
         <tr id="space-launch-table-header">
             <th>Name</th>
@@ -31,19 +41,6 @@
         <% } %>
     </table>
     <p><strong>* All times are in UTC</strong></p>
-    <div id="details-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="modal-launch-title"></h3>
-            <p>
-                <strong>Status: </strong><span id="modal-launch-status"></span><br />
-                <strong>Launch: </strong><span id="modal-launch-datetime"></span><br />
-                <strong>Launch Provider: </strong><span id="modal-launch-provider"></span><br />
-                <strong>Launch Details: </strong><span id="modal-launch-details"></span>
-            </p>
-        </div>
-    </div>
-
     <script src="/js/launches.js"></script>
 </body>
 

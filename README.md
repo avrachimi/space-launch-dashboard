@@ -1,7 +1,8 @@
 # Space Launch Dashboard
 
 **Frontend: HTML, CSS, Javascript**  
-**Backend: Node.js (Javascript)**  
+**Backend: Node.js**  
+**Database: MySQL**  
 
 Using the [Launch Library API](https://ll.thespacedevs.com).
 

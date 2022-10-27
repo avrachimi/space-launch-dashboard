@@ -3,18 +3,79 @@
 
 <head>
     <title>Space Launch Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/index.css">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="#">
 </head>
 
-<body>
-    <h1>Pages</h1>
-    <ul>
-        <li><a href="/launches">Upcoming Launches</a></li>
-        <li><a href="/iss">ISS Info</a></li>
-        <li><a href="/starship">Starship Updates</a></li>
-    </ul>
+<body> 
+    <header>
+        <h3>Space Launch Dashboard</h3>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/launches" class="current">Launches</a></li>
+                <li><a href="/iss">ISS</a></li>
+                <li><a href="/starship">Starship</a></li>
+            </ul>
+        </nav>
+        <a class="callToAction" target="_blank" href="https://github.com/avrachimi/space-launch-dashboard"><button>Github</button></a>
+    </header>
+    <div id="iss-dashboard" hidden="true">
+        <h2>International Space Station</h2>
+        <div id="numOfCrew">
+            <h4>Astronauts On Board</h4> 
+            <span><%= locals.crew.length %> </span>
+        </div>
+        <div id="numOfDockedVehicles">
+            <h4>Docked Vehicles</h4> 
+            <% var counter = 0; %> 
+            <% for(var i = 0; i < locals.docked_vehicles.length; i++) { %> 
+                <% if (locals.docked_vehicles[i].docked_at) counter++; %>
+            <% } %> 
+            <span><%= counter %> </span>
+        </div>
+    </div>
+    <div id="launches">
+        <h2>Upcoming Launches</h2>
+        <table id="space-launch-table">
+            <tr id="space-launch-table-header">
+                <th>Name</th>
+                <th>Status</th>
+                <th>Launch Date & Time*</th>
+                <th>Launch Provider</th>
+                <th>Launch Type</th>
+            </tr>
+            <% for (var i=0; i < 3; i++) { %>
+                <tr>
+                    <td><%= locals.launches[i].name %></td>
+                    <td><%= locals.launches[i].status_short %></td>
+                    <td><%= new Date(locals.launches[i].datetime).toUTCString().slice(0, 26) %></td>
+                    <td><%= locals.launches[i].provider_name %></td>
+                    <td><%= locals.launches[i].provider_type ? locals.launches[i].provider_type : 'N/A' %></td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    <div id="starship">
+        <h2>Latest Starship Updates</h2>
+        <table id="starship-updates-table">
+            <tr id="starship-updates-table-header">
+                <th>Received On*</th>
+                <th>Comments</th>
+                <th>More Info</th>
+            </tr>
+            <% for (var i=0; i < 2; i++) { %>
+                <tr>
+                    <td><%= new Date(locals.starship[i].created_on).toUTCString().slice(0, 26) %></td>
+                    <td><%= locals.starship[i].comment %></td>
+                    <td><a target="_blank" href=<%= locals.starship[i].info_url %>>more info</a></td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    <p><strong>* All times are in UTC</strong></p>
     <script src="/js/index.js"></script>
 </body>
 

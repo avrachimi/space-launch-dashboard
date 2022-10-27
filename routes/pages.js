@@ -3,8 +3,13 @@ const router = express.Router();
 
 const db = require('../db-helper');
 
-router.get('/', (req, res) => {
-    res.render('index');
+router.get('/', async (req, res) => {
+    var iss_crew = await db.getISSCrew();
+    var iss_docked = await db.getISSDockedVehicles();
+    var starship = await db.getStarshipUpdates();
+    var launches = await db.getLaunches();
+
+    res.render('index', { crew: iss_crew, docked_vehicles: iss_docked, starship: starship, launches: launches });
 });
 
 router.get('/launches', (req, res) => {

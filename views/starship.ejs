@@ -3,15 +3,25 @@
 
 <head>
     <title>Space Launch Dashboard</title>
+    <link rel="stylesheet" href="/css/starship.css">
     <link rel="stylesheet" href="/css/styles.css">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="#">
 </head>
 
-<body>
-    <div id="header">
-        <h1>Starship Updates</h1>
-    </div>
+<body>    
+    <header>
+        <h3>Space Launch Dashboard</h3>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/launches" class="current">Launches</a></li>
+                <li><a href="/iss">ISS</a></li>
+                <li><a href="/starship">Starship</a></li>
+            </ul>
+        </nav>
+        <a class="callToAction" target="_blank" href="https://github.com/avrachimi/space-launch-dashboard"><button>Github</button></a>
+    </header>
     <table id="starship-updates-table">
         <tr id="starship-updates-table-header">
             <th>Received On*</th>

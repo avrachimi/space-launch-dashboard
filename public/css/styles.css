@@ -1,67 +1,114 @@
-#header {
-    text-align: center;
-    height: 100%;
-    background-color: bisque;
-    border-radius: 10px;
-    margin: 2px;
-    margin-bottom: 1%;
-    padding: 0.5%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #edf0f1;
 }
 
-#space-launch-table-header {
-    background-color:white;
+body {
+  background-color: #454752;
+}
+
+header > h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 1000;
+  color: #edf0f1;
+}
+
+header > li, a, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 10%;
+  background-color: #24252a;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+header > .nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #0099a9;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
 }
 
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: bisque;
-  }
-
-   /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  padding: 0 5%;
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left:auto; 
+  margin-right:auto; 
+  width:98%;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
+td, th {
+  border: 1px solid darkgray;
+  text-align: center;
+  padding: 5px;
   color: black;
-  text-decoration: none;
-  cursor: pointer;
-} 
+}
+
+th {
+  color: black;
+  background-color: rgb(211, 167, 116);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(255, 246, 235);
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(208, 186, 161);
+}
+
+td > a {
+  color: black;
+  text-decoration: underline;
+}
+
+td > a:hover {
+  color: blue;
+}
+
+p {
+  padding: 0 5%;
+  color: #edf0f1;
+}
+
+#tables {
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
