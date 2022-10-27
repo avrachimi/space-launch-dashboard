@@ -1,10 +1,16 @@
 # Space Launch Dashboard
 
-##### Frontend: HTML, CSS, Javascript
-##### Backend: Node.js (Javascript)
+**Frontend: HTML, CSS, Javascript**  
+**Backend: Node.js (Javascript)**  
 
 Using the [Launch Library API](https://ll.thespacedevs.com).
 
 ### TODO
-- Show more results (either on the same page or by adding pages to the table)
-- Show Modal with more details when user clicks on a specific launch
+- Show Modal with more details when user clicks on a specific item
+- Create ISS page and endpoint
+- Create Starship page and endpoint
+- Create Other Events page and endpoint
+- Move Launches table to its own page
+- Save API data in a database
+- Retrieve data every 1 hour from API and update database
+- Home Page should be a dashboard showing all kinds of data regarding the ISS, launches, Starship development updates and other events
