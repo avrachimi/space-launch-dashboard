@@ -1,0 +1,29 @@
+#header {
+    text-align: center;
+    height: 100%;
+    background-color: bisque;
+    border-radius: 10px;
+    margin: 2px;
+    margin-bottom: 1%;
+    padding: 0.5%;
+}
+
+#space-launch-table-header {
+    background-color:white;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: bisque;
+  }
