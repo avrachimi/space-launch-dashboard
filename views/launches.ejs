@@ -3,7 +3,7 @@
 
 <head>
     <title>Space Launch Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="#">
 </head>
@@ -16,12 +16,21 @@
         <tr id="space-launch-table-header">
             <th>Name</th>
             <th>Status</th>
-            <th>Launch Date & Time</th>
+            <th>Launch Date & Time*</th>
             <th>Launch Provider</th>
             <th>Launch Type</th>
         </tr>
+        <% for (var i=0; i < locals.data.length; i++) { %>
+            <tr>
+                <td><%= locals.data[i].name %></td>
+                <td><%= locals.data[i].status_short %></td>
+                <td><%= new Date(locals.data[i].datetime).toUTCString().slice(0, 26) %></td>
+                <td><%= locals.data[i].provider_name %></td>
+                <td><%= locals.data[i].provider_type ? locals.data[i].provider_type : 'N/A' %></td>
+            </tr>
+        <% } %>
     </table>
-
+    <p><strong>* All times are in UTC</strong></p>
     <div id="details-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -35,7 +44,7 @@
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="/js/launches.js"></script>
 </body>
 
 </html>

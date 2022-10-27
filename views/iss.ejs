@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Space Launch Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <div id="header">
+        <h1>International Space Station</h1>
+    </div>
+    <table id="iss-crew-table">
+        <tr id="iss-crew-table-header">
+            <th>Name</th>
+            <th>Role</th>
+            <th>Agency</th>
+            <th>Photo</th>
+        </tr>
+        <% for (var i=0; i < locals.crew.length; i++) { %>
+            <tr>
+                <td><%= locals.crew[i].name %></td>
+                <td><%= locals.crew[i].role %></td>
+                <td><%= locals.crew[i].agency %></td>
+                <td><a target="_blank" href=<%= locals.crew[i].img_url %>>view</a></td>
+            </tr>
+        <% } %>
+    </table>
+
+    <table id="iss-docked-vehicles-table">
+        <tr id="iss-docked-vehicles-table-header">
+            <th>Name</th>
+            <th>Docked At*</th>
+        </tr>
+        <% for (var i=0; i < locals.docked_vehicles.length; i++) { %>
+            <% if (locals.docked_vehicles[i].docked_at) { %> 
+            <tr>
+                <td><%= locals.docked_vehicles[i].name %></td>
+                <td><%= new Date(locals.docked_vehicles[i].docked_at).toUTCString().slice(0, 26) %></td>
+            </tr>
+            <% } %>
+        <% } %>
+    </table>
+    <p><strong>* All times are in UTC</strong></p>
+    <script src="/js/iss.js"></script>
+</body>
+
+</html>

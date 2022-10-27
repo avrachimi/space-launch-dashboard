@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const fetch = require('node-fetch');
-const db = require('./db-helper.js');
+const db = require('./db-helper');
 
 const BASE_URL = process.env.API_BASE_URL;
 

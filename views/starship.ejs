@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Space Launch Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <div id="header">
+        <h1>Starship Updates</h1>
+    </div>
+    <table id="starship-updates-table">
+        <tr id="starship-updates-table-header">
+            <th>Received On*</th>
+            <th>Comments</th>
+            <th>More Info</th>
+        </tr>
+        <% for (var i=0; i < locals.data.length; i++) { %>
+            <tr>
+                <td><%= new Date(locals.data[i].created_on).toUTCString().slice(0, 26) %></td>
+                <td><%= locals.data[i].comment %></td>
+                <td><a target="_blank" href=<%= locals.data[i].info_url %>>more info</a></td>
+            </tr>
+        <% } %>
+    </table>
+    <p><strong>* All times are in UTC</strong></p>
+    <script src="/js/starship.js"></script>
+</body>
+
+</html>

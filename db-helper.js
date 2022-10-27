@@ -48,6 +48,7 @@ function getStarshipUpdates() {
 
 // INSERT //
 function insertLaunches(data) {
+    deleteTableContents('launches'); // Deleting all table contents on purpose. I only want the next 10 upcoming launches
     const sql = 'INSERT INTO `launches` (`name`,`status_short`,`status_long`,`datetime`,`provider_name`,`provider_type`,`rocket_name`,`mission_name`) VALUES ?';
     let bulk_items = [];
     data.forEach(launch => {
@@ -71,6 +72,7 @@ function insertLaunches(data) {
 }
 
 function insertISSDockedVehicles(data) {
+    deleteTableContents('iss_docked_vehicles'); // Deleting all table contents on purpose
     const sql = 'INSERT INTO `iss_docked_vehicles` (`name`,`docked_at`) VALUES ?';
     let bulk_items = [];
     data.forEach(vehicle => {
@@ -88,12 +90,15 @@ function insertISSDockedVehicles(data) {
 }
 
 function insertISSCrew(data) {
+    deleteTableContents('iss_crew'); // Deleting all table contents on purpose
     const sql = 'INSERT INTO `iss_crew` (`name`,`role`,`agency`,`img_url`) VALUES ?';
     let bulk_items = [];
-    data.forEach(update => {
+    data.forEach(member => {
         bulk_items.push([
-            update.comment,
-            update.info_url
+            member.astronaut.name,
+            member.role.role,
+            member.astronaut.agency.name,
+            member.astronaut.profile_image,
         ]);
     });
 
@@ -105,6 +110,7 @@ function insertISSCrew(data) {
 }
 
 function insertStarshipUpdates(data) {
+    deleteTableContents('starship_updates'); // Deleting all table contents on purpose
     const sql = 'INSERT INTO `starship_updates` (`comment`,`info_url`, `created_on`) VALUES ?';
     let bulk_items = [];
     data.forEach(update => {
@@ -117,6 +123,14 @@ function insertStarshipUpdates(data) {
 
     // Bulk Insert
     db.query(sql, [bulk_items], (err, result) => {
+        if (err) throw err;
+        return result;
+    });
+}
+
+function deleteTableContents(table_name) {
+    const sql = 'DELETE FROM `' + table_name + '`';
+    db.query(sql, (err, result) => {
         if (err) throw err;
         return result;
     });
