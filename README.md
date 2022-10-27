@@ -7,9 +7,10 @@
 Using the [Launch Library API](https://ll.thespacedevs.com).
 
 ### Pages
-- /launches
-- /iss
-- /starship
+- Home (/)
+- Upcoming Launches (/launches)
+- International Space Station (/iss)
+- Starship Updates (/starship)
 
 ## How to Install and Run
 **You should already have Node and MySQL server installed and running.**
