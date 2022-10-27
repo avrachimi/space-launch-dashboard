@@ -5,8 +5,14 @@
 
 Using the [Launch Library API](https://ll.thespacedevs.com).
 
+### Endpoints
+- /api/launches
+- /api/iss
+- /api/starship
+- /api/other-events
+
 ### TODO
-- Show Modal with more details when user clicks on a specific item
+- ~~Show Modal with more details when user clicks on a specific item~~ (maybe later)
 - Create ISS page and endpoint
 - Create Starship page and endpoint
 - Create Other Events page and endpoint
